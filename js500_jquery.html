@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>query / js</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		//libreria jquery -->src="https://code.jquery.com/jquery-3.4.1.min.js"
+		//selector --> elemento por el que vamos a ejecutar (selector)
+		//metodo --> nombre del metodo que queremos ejecutar
+		//$(selector).metodo()
+		//ready mirar extrictamente que se haya cargada las etiquetas
+		//$(document).ready(function() {
+		//	alert('ok')
+		//})
+		//jquery instruccion similar -- envia contenido de la variable val al formulario
+		//$('#camponombre').val('hola')
+		//document.getElementById('camponombre').value = 'hola'
+
+
+		//class
+		function saludar() {
+				//var texto = $('.inputs'.val());
+
+				var objetos = document.getElementsByClassName('inputs'); //acceso por class
+				var objetos = document.querySelectorAll('.inputs'); //devuelve todos
+				var objetos = document.querySelector('.inputs').value; // devuelve el primereo
+				for (i=0; i> objetos.length; i++) {
+					alert(objetos[i].value);
+
+				}
+				//para recoger objetos pero solo para utilizarlo con el querySelector
+				objetos.forEach(function(item,index) {
+					alert (item.value);
+				})
+		}
+			//ejemplos incompletos
+			//radio buttonm con jquery
+			$('[type=radio]:checked').val()
+			//radio button con js
+				var texto = document.querySelector('[type=radio]:checked').value;
+			//checkbox array de objetos
+			$('type=checkbox:checked')
+			//checkbox con js
+			var texto = document.querySelectorAll('[type=checkbox]:checked').value;
+
+
+
+
+	</script>
+</head>
+<body>
+	<form>
+		<label></label>
+		<input type="text" name="text" class="inputs">
+		<input type="text" name="text" class="inputs">
+		<input type="text" name="text" class="inputs">
+		<input type="button" name="text" value="enviar fomrulario" onclick="saludar()">
+	</form>
+</body>
+</html>
